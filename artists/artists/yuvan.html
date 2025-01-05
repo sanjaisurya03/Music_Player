@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvan Shankar Raja - Songs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Yuvan Shankar Raja - Songs</h1>
+    </header>
+
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="../../artists.html">Artists</a>
+        <a href="../../albums.html">Albums</a>
+        <a href="../../playlists.html">Playlist</a>
+    </nav>
+
+    <section>
+        <img src="images/yuvan.jpg" alt="Yuvan Shankar Raja" class="artist-image">
+        <h2>Top Songs by Yuvan Shankar Raja</h2>
+        <div class="search-container">
+            <i class="search-icon fas fa-search"></i>
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search songs...">
+        </div>
+
+        <ul id="songList">
+            <li data-song="songs/venmegam.mp3" data-name="Venmegam" data-image="images/venmegam.jpg">
+                <img src="images/venmegam.jpg" alt="Venmegam" class="song-img">
+                <span>Venmegam</span>
+                <button class="play-btn" onclick="playSong('songs/venmegam.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Venmegam', 'artists/artists/images/venmegam.jpg', 'artists/artists/songs/venmegam.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/ennai_vetru.mp3" data-name="Ennai Vittu Uyir Ponalum" data-image="images/ennai_vetru.jpg">
+                <img src="images/ennai_vetru.jpg" alt="Ennai Vittu Uyir Ponalum" class="song-img">
+                <span>Ennai Vittu Uyir Ponalum</span>
+                <button class="play-btn" onclick="playSong('songs/ennai_vetru.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Ennai Vittu Uyir Ponalum', 'artists/artists/images/ennai_vetru.jpg', 'artists/artists/songs/ennai_vetru.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/high_love.mp3" data-name="High On Love" data-image="images/high_love.jpg">
+                <img src="images/high_love.jpg" alt="High On Love" class="song-img">
+                <span>High On Love</span>
+                <button class="play-btn" onclick="playSong('songs/high_love.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('High On Love', 'artists/artists/images/high_love.jpg', 'artists/artists/songs/high_love.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/engeum_parthal.mp3" data-name="Engeyum Parthal" data-image="images/engeum_parthal.jpg">
+                <img src="images/engeum_parthal.jpg" alt="Engeyum Parthal" class="song-img">
+                <span>Engeyum Parthal</span>
+                <button class="play-btn" onclick="playSong('songs/engeum_parthal.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Engeyum Parthal', 'artists/artists/images/engeum_parthal.jpg', 'artists/artists/songs/engeum_parthal.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/kanja_poo.mp3" data-name="Kanja Poovu Kannala" data-image="images/kanja_poo.jpg">
+                <img src="images/kanja_poo.jpg" alt="Kanja Poovu Kannala" class="song-img">
+                <span>Kanja Poovu Kannala</span>
+                <button class="play-btn" onclick="playSong('songs/kanja_poo.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Kanja Poovu Kannala', 'artists/artists/images/kanja_poo.jpg', 'artists/artists/songs/kanja_poo.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/ennai.mp3" data-name="En Janal Vandhu Kaitre" data-image="images/ennai.jpg">
+                <img src="images/ennai.jpg" alt="En Janal Vandhu Kaitre" class="song-img">
+                <span>En Janal Vandhu Kaitre</span>
+                <button class="play-btn" onclick="playSong('songs/ennai.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('En Janal Vandhu Kaitre', 'artists/artists/images/ennai.jpg', 'artists/artists/songs/ennai.mp3')">Add to Playlist</button>
+            </li>
+        </ul>
+
+        <div class="audio-container">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyoncé - Cowboy Carter</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS in the same folder -->
+</head>
+<body>
+    <header>
+        <h1>Beyoncé - Cowboy Carter</h1>
+    </header>
+
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="../../artists.html">Artists</a>
+        <a href="../../albums.html">Albums</a>
+        <a href="../../playlists.html">Playlists</a>
+    </nav>
+
+    <section>
+        <!-- Artist Image -->
+        <img src="images/beyoncécowboycarter.jpg" alt="Cowboy Carter" class="artist-image">
+
+        <h2>Best Tracks from *Cowboy Carter*</h2>
+        <div class="search-container">
+            <i class="search-icon fas fa-search"></i>
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search songs...">
+        </div>
+
+        <ul id="songList">
+            <li data-song="songs/16carriages.mp3" data-name="16 Carriages" data-image="images/16carriages.jpg">
+                <img src="images/16carriages.jpg" alt="16 Carriages" class="song-img">
+                <span>16 Carriages</span>
+                <button class="play-btn" onclick="playSong('songs/16carriages.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('16 Carriages', 'albums/albums/images/16carriages.jpg', 'albums/albums/songs/16carriages.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/texasholdem.mp3" data-name="Texas Hold 'Em" data-image="images/texasholdem.jpg">
+                <img src="images/texasholdem.jpg" alt="Texas Hold 'Em" class="song-img">
+                <span>Texas Hold 'Em</span>
+                <button class="play-btn" onclick="playSong('songs/texasholdem.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Texas Hold \'Em', 'albums/albums/images/texasholdem.jpg', 'albums/albums/songs/texasholdem.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/riverdance.mp3" data-name="Riverdance" data-image="images/riverdance.jpg">
+                <img src="images/riverdance.jpg" alt="Riverdance" class="song-img">
+                <span>Riverdance</span>
+                <button class="play-btn" onclick="playSong('songs/riverdance.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Riverdance', 'albums/albums/images/riverdance.jpg', 'albums/albums/songs/riverdance.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/yaya.mp3" data-name="Ya Ya" data-image="images/yaya.jpg">
+                <img src="images/yaya.jpg" alt="Ya Ya" class="song-img">
+                <span>Ya Ya</span>
+                <button class="play-btn" onclick="playSong('songs/yaya.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Ya Ya', 'albums/albums/images/yaya.jpg', 'albums/albums/songs/yaya.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/blackbird.mp3" data-name="Blackbird" data-image="images/blackbird.jpg">
+                <img src="images/blackbird.jpg" alt="Blackbird" class="song-img">
+                <span>Blackbird</span>
+                <button class="play-btn" onclick="playSong('songs/blackbird.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Blackbird', 'albums/albums/images/blackbird.jpg', 'albums/albums/songs/blackbird.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/producer.mp3" data-name="Protector" data-image="images/producer.jpg">
+                <img src="images/producer.jpg" alt="Protector" class="song-img">
+                <span>Protector</span>
+                <button class="play-btn" onclick="playSong('songs/producer.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Protector', 'albums/albums/images/producer.jpg', 'albums/albums/songs/producer.mp3')">Add to Playlist</button>
+            </li>
+        </ul>
+
+        <!-- Audio player container -->
+        <div class="audio-container">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- JS in the same folder -->
+</body>
+</html>

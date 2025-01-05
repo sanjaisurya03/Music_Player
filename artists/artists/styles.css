@@ -1,0 +1,258 @@
+body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #282828;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1DB954;
+        }
+
+        section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #1DB954;
+            margin-bottom: 2rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            padding: 1.5rem;
+            background-color: #1E1E1E;
+            margin: 0.5rem 0;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 350px;
+            min-height: 150px; /* Ensures uniform height */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #333;
+        }
+
+        .song-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .play-btn {
+            background-color: #1DB954;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .play-btn:hover {
+            background-color: #1A9D44;
+        }
+
+        .like-btn {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .like-btn.liked {
+            color: #e0245e;
+        }
+
+        .add-to-playlist-btn {
+            background-color: #444;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-playlist-btn:hover {
+            background-color: #1DB954;
+        }
+
+        .artist-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .audio-container {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 20px;
+            width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .audio-container audio {
+            width: 100%;
+            border-radius: 10px;
+            background-color: #333;
+            padding: 5px;
+        }
+
+        .playlist-container {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #1E1E1E;
+            border-radius: 10px;
+        }
+
+        .playlist-container h2 {
+            font-size: 2rem;
+            color: #1DB954;
+        }
+
+        .playlist ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .playlist ul li {
+            margin-bottom: 10px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #282828;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+/* Search Container */
+.search-container {
+    position: relative;
+    display: flex; /* Use flexbox for easy alignment */
+    align-items: center; /* Vertically align items */
+    width: 60%; /* Adjust width as needed */
+    margin: 20px auto; /* Center the search bar */
+    border: 1px solid #444; /* Border for the container */
+    border-radius: 50px; /* Rounded pill shape */
+    background-color: #1e1e1e;
+    padding: 10px 15px; /* Add padding for spacing */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.search-container:hover {
+    border-color: #1db954;
+    box-shadow: 0 2px 8px rgba(29, 185, 84, 0.6), inset 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Search Icon */
+.search-icon {
+    color: #1db954; /* Icon color */
+    font-size: 1.5rem; /* Icon size */
+    margin-right: 10px; /* Spacing between icon and input field */
+    pointer-events: none; /* Prevent interaction with the icon */
+    transition: color 0.3s ease;
+}
+
+.search-container:hover .search-icon {
+    color: #1a9d44; /* Change color on hover */
+}
+
+/* Search Bar */
+.search-bar {
+    flex-grow: 1; /* Make the input take the remaining space */
+    border: none; /* Remove input border */
+    outline: none; /* Remove focus outline */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* Text color */
+    font-size: 1rem;
+    padding: 0; /* Remove extra padding */
+}
+
+.search-bar::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        width: 80%;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dave Grohl - Songs</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS in the same folder -->
+</head>
+<body>
+    <header>
+        <h1>Dave Grohl - Songs</h1>
+    </header>
+
+    <nav>
+        <a href="../../index.html">Home</a> <!-- Adjusted path for root file -->
+        <a href="../../artists.html">Artists</a> <!-- Path within the same folder -->
+        <a href="../../albums.html">Albums</a> <!-- Albums folder -->
+        <a href="../../playlists.html">Playlist</a> <!-- Playlist in the root directory -->
+    </nav>
+
+    <section>
+        <!-- Artist Image -->
+        <img src="images/davegrohl.jpg" alt="Dave Grohl" class="artist-image">
+
+        <h2>Top Songs by Dave Grohl (Foo Fighters)</h2>
+        <div class="search-container">
+    <i class="search-icon fas fa-search"></i>
+    <input type="text" id="searchBar" class="search-bar" placeholder="Search songs...">
+</div>
+
+        <ul id="songList">
+            <li data-song="songs/everlong.mp3" data-name="Everlong" data-image="images/everlong.jpg">
+                <img src="images/everlong.jpg" alt="Everlong" class="song-img">
+                <span>Everlong</span>
+                <button class="play-btn" onclick="playSong('songs/everlong.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Everlong', 'artists/artists/images/everlong.jpg', 'artists/artists/songs/everlong.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/thepretender.mp3" data-name="The Pretender" data-image="images/thepretender.jpg">
+                <img src="images/thepretender.jpg" alt="The Pretender" class="song-img">
+                <span>The Pretender</span>
+                <button class="play-btn" onclick="playSong('songs/thepretender.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('The Pretender', 'artists/artists/images/thepretender.jpg', 'artists/artists/songs/thepretender.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/bestofyou.mp3" data-name="Best of You" data-image="images/bestofyou.jpg">
+                <img src="images/bestofyou.jpg" alt="Best of You" class="song-img">
+                <span>Best of You</span>
+                <button class="play-btn" onclick="playSong('songs/bestofyou.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Best of You', 'artists/artists/images/bestofyou.jpg', 'artists/artists/songs/bestofyou.mp3')">Add to Playlist</button>
+            </li>
+        </ul>
+
+        <!-- Audio player container -->
+        <div class="audio-container">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- JS in the same folder -->
+</body>
+</html>

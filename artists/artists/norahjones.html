@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norah Jones - Songs</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS in the same folder -->
+</head>
+<body>
+    <header>
+        <h1>Norah Jones - Songs</h1>
+    </header>
+
+    <nav>
+        <a href="../../index.html">Home</a> 
+        <a href="../../artists.html">Artists</a> 
+        <a href="../../albums.html">Albums</a> 
+        <a href="../../playlists.html">Playlist</a> 
+    </nav>
+
+    <section>
+        <!-- Artist Image -->
+        <img src="images/norah_jones.jpg" alt="Norah Jones" class="artist-image">
+
+        <h2>Top Songs by Norah Jones</h2>
+        <div class="search-container">
+    <i class="search-icon fas fa-search"></i>
+    <input type="text" id="searchBar" class="search-bar" placeholder="Search songs...">
+</div>
+
+        <ul id="songList">
+            <li data-song="songs/dont_know_why.mp3" data-name="Don't Know Why" data-image="images/dont_know_why.jpg">
+                <img src="images/dont_know_why.jpg" alt="Don't Know Why" class="song-img">
+                <span>Don't Know Why</span>
+                <button class="play-btn" onclick="playSong('songs/dont_know_why.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Don't Know Why', 'artists/artists/images/dont_know_why.jpg', 'artists/artists/songs/dont_know_why.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/come_away_with_me.mp3" data-name="Come Away With Me" data-image="images/come_away_with_me.jpg">
+                <img src="images/come_away_with_me.jpg" alt="Come Away With Me" class="song-img">
+                <span>Come Away With Me</span>
+                <button class="play-btn" onclick="playSong('songs/come_away_with_me.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Come Away With Me', 'artists/artists/images/come_away_with_me.jpg', 'artists/artists/songs/come_away_with_me.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/seven_years.mp3" data-name="Seven Years" data-image="images/sevenyears.jpg">
+                <img src="images/sevenyears.jpg" alt="Seven Years" class="song-img">
+                <span>Seven Years</span>
+                <button class="play-btn" onclick="playSong('songs/seven_years.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Seven Years', 'artists/artists/images/sevenyears.jpg', 'artists/artists/songs/seven_years.mp3')">Add to Playlist</button>
+            </li>
+        </ul>
+
+        <!-- Audio player container -->
+        <div class="audio-container">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- JS in the same folder -->
+</body>
+</html>

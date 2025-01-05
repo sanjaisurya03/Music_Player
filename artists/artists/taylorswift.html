@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift - Songs</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS in the same folder -->
+</head>
+<body>
+    <header>
+        <h1>Taylor Swift - Songs</h1>
+    </header>
+
+    <nav>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <a href="../../index.html">Home</a> <!-- Adjusted path for root file -->
+        <a href="../../artists.html">Artists</a> <!-- Path within the same folder -->
+        <a href="../../albums.html">Albums</a> <!-- Albums folder -->
+        <a href="../../playlists.html">Playlist</a> <!-- Playlist in the root directory -->
+    </nav>
+
+    <section>
+        <!-- Artist Image -->
+        <img src="images/taylorswift1.jpg" alt="Taylor Swift" class="artist-image">
+
+        <h2>Top Songs by Taylor Swift</h2>
+        <div class="search-container">
+    <i class="search-icon fas fa-search"></i>
+    <input type="text" id="searchBar" class="search-bar" placeholder="Search songs...">
+</div>
+
+        <ul id="songList">
+            <li data-song="songs/lovestory.mp3" data-name="Love Story" data-image="images/lovestory.jpg">
+                <img src="images/lovestory.jpg" alt="Love Story" class="song-img">
+                <span>Love Story</span>
+                <button class="play-btn" onclick="playSong('songs/lovestory.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Love Story', 'artists/artists/images/lovestory.jpg', 'artists/artists/songs/lovestory.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/shakeitoff.mp3" data-name="Shake It Off" data-image="images/shakeitof.jpg">
+                <img src="images/shakeitof.jpg" alt="Shake It Off" class="song-img">
+                <span>Shake It Off</span>
+                <button class="play-btn" onclick="playSong('songs/shakeitoff.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Shake It Off', 'artists/artists/images/shakeitof.jpg', 'artists/artists/songs/shakeitoff.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/youbelongwithme.mp3" data-name="You Belong With Me" data-image="images/youbelongwithme.jpg">
+                <img src="images/youbelongwithme.jpg" alt="You Belong With Me" class="song-img">
+                <span>You Belong With Me</span>
+                <button class="play-btn" onclick="playSong('songs/youbelongwithme.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('You Belong With Me', 'artists/artists/images/youbelongwithme.jpg', 'artists/artists/songs/youbelongwithme.mp3')">Add to Playlist</button>
+            </li>
+        </ul>
+
+        <!-- Audio player container -->
+        <div class="audio-container">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- JS in the same folder -->
+</body>
+</html>

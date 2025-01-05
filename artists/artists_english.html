@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>English Artists - Rhythmic World</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>English Artists - Rhythmic World</h1>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../artists.html">Artists</a>
+        <a href="../albums.html">Albums</a>
+        <a href="../playlists.html">Playlists</a>
+        <a href="../profile.html">Profile</a>
+    </nav>
+
+    <main>
+        <div class="search-container">
+            <i class="search-icon fas fa-search" aria-hidden="true"></i>
+            <label for="searchBar" class="visually-hidden"></label> <!-- Ensure it's correctly linked -->
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search Artist...">
+        </div>
+
+        <div class="artist-list">
+            <div class="artist-card" onclick="window.location.href='artists/taylorswift.html'">
+                <img src="../images/taylorswift.jpg" alt="Taylor Swift">
+                <h3>Taylor Swift</h3>
+                <p>Genre: Pop, Country</p>
+            </div>
+
+            <div class="artist-card" onclick="window.location.href='artists/davegrohl.html'">
+                <img src="../images/DaveGrohl.jpg" alt="Dave Grohl">
+                <h3>Dave Grohl</h3>
+                <p>Genre: Rock</p>
+            </div>
+
+            <div class="artist-card" onclick="window.location.href='artists/norahjones.html'">
+                <img src="../images/norahjones.jpg" alt="Norah Jones">
+                <h3>Norah Jones</h3>
+                <p>Genre: Jazz</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

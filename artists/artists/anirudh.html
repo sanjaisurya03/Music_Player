@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anirudh Ravichander - Songs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Anirudh Ravichander - Songs</h1>
+    </header>
+
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="../../artists.html">Artists</a>
+        <a href="../../albums.html">Albums</a>
+        <a href="../../playlists.html">Playlist</a>
+    </nav>
+
+    <section>
+        <!-- Artist Image -->
+        <img src="images/anirudh.jpg" alt="Anirudh Ravichander" class="artist-image">
+
+        <h2>Top Songs by Anirudh Ravichander</h2>
+        <div class="search-container">
+            <i class="search-icon fas fa-search"></i>
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search songs...">
+        </div>
+
+        <ul id="songList">
+            <li data-song="songs/nee_patha_veeligal.mp3" data-name="Nee Patha Veeligal" data-image="images/nee_patha_veeligal.jpg">
+                <img src="images/nee_patha_veeligal.jpg" alt="Nee Patha Veeligal" class="song-img">
+                <span>Nee Patha Veeligal</span>
+                <button class="play-btn" onclick="playSong('songs/nee_patha_veeligal.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Nee Patha Veeligal', 'artists/artists/images/nee_patha_veeligal.jpg', 'artists/artists/songs/nee_patha_veeligal.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/dheema_dheema.mp3" data-name="Dheema Dheema" data-image="images/dheema_dheema.jpg">
+                <img src="images/dheema_dheema.jpg" alt="Dheema Dheema" class="song-img">
+                <span>Dheema Dheema</span>
+                <button class="play-btn" onclick="playSong('songs/dheema_dheema.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Dheema Dheema', 'artists/artists/images/dheema_dheema.jpg', 'artists/artists/songs/dheema_dheema.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/kainakainaka.mp3" data-name="Kannaana Kanne" data-image="images/kainakainaka.jpg">
+                <img src="images/kainakainaka.jpg" alt="Kannaana Kanne" class="song-img">
+                <span>Kannaana Kanne</span>
+                <button class="play-btn" onclick="playSong('songs/kainakainaka.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Kannaana Kanne', 'artists/artists/images/kainakainaka.jpg', 'artists/artists/songs/kainakainaka.jmp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/bae.mp3" data-name="Bae" data-image="images/bae.jpg">
+                <img src="images/bae.jpg" alt="Bae   " class="song-img">
+                <span>Bae   </span>
+                <button class="play-btn" onclick="playSong('songs/bae.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Bae', 'artists/artists/images/bae.jpg', 'artists/artists/songs/bae.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/kanavekanave.mp3" data-name="Kanave Kanave" data-image="images/kanavekanave.jpg">
+                <img src="images/kanavekanave.jpg" alt="Kanave Kanave" class="song-img">
+                <span>Kanave Kanave</span>
+                <button class="play-btn" onclick="playSong('songs/kanavekanave.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Kanave Kanave', 'artists/artists/images/kanavekanave.jpg', 'artists/artists/songs/kanavekanave.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/yaanji.mp3" data-name="Yaanji" data-image="images/yaanji.jpg">
+                <img src="images/yaanji.jpg" alt="Yaanji" class="song-img">
+                <span>Yaanji</span>
+                <button class="play-btn" onclick="playSong('songs/yaanji.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Yaanji', 'artists/artists/images/yaanji.jpg', 'artists/artists/songs/yaanji.mp3')">Add to Playlist</button>
+            </li>
+        </ul>
+
+        <!-- Audio player container -->
+        <div class="audio-container">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- JavaScript file reference -->
+</body>
+</html>

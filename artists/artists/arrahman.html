@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.R. Rahman - Songs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <header>
+        <h1>A.R. Rahman - Songs</h1>
+    </header>
+
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="../../artists.html">Artists</a>
+        <a href="../../albums.html">Albums</a>
+        <a href="../../playlists.html">Playlist</a>
+    </nav>
+
+    <section>
+        <!-- Artist Image -->
+        <img src="images/rahman.jpg" alt="A.R. Rahman" class="artist-image">
+
+        <h2>Top Songs by A.R. Rahman</h2>
+        <div class="search-container">
+            <i class="search-icon fas fa-search"></i>
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search songs...">
+        </div>
+
+        <ul id="songList">
+            <li data-song="songs/innum_konja_neram.mp3" data-name="Innum Konja Neram" data-image="images/innum_konja_neram.jpg">
+                <img src="images/innum_konja_neram.jpg" alt="Innum Konja Neram" class="song-img">
+                <span>Innum Konja Neram</span>
+                <button class="play-btn" onclick="playSong('songs/innum_konja_neram.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Innum Konja Neram', 'artists/artists/images/innum_konja_neram.jpg', 'artists/artists/songs/innum_konja_neram.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/nejukulla.mp3" data-name="Nejukulla" data-image="images/nejukulla.jpg">
+                <img src="images/nejukulla.jpg" alt="Nejukulla" class="song-img">
+                <span>Nejukulla</span>
+                <button class="play-btn" onclick="playSong('songs/nejukulla.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Nejukulla', 'artists/artists/images/nejukulla.jpg', 'artists/artists/songs/nejukulla.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/ennodu_neeirundhaal.mp3" data-name="Ennodu Nee Irundhaal" data-image="images/ennodu_nee_irundhaal.jpg">
+                <img src="images/ennodu_neeirundhaal.jpg" alt="Ennodu Nee Irundhaal" class="song-img">
+                <span>Ennodu Nee Irundhaal</span>
+                <button class="play-btn" onclick="playSong('songs/ennodu_neeirundhaal.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Ennodu Nee Irundhaal', 'artists/artists/images/ennodu_neeirundhaal.jpg', 'artists/artists/songs/ennodu_neeirundhaal.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/aganaga.mp3" data-name="Aganaga" data-image="images/aganaga.jpg">
+                <img src="images/aganaga.jpg" alt="Aganaga" class="song-img">
+                <span>Aganaga</span>
+                <button class="play-btn" onclick="playSong('songs/aganaga.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Aganaga', 'artists/artists/images/aganaga.jpg', 'artists/artists/songs/aganaga.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/neesingam_than.mp3" data-name="Neesingam Dhaan" data-image="images/neesingam_than.jpg">
+                <img src="images/neesingam_than.jpg" alt="Neesingam Dhaan" class="song-img">
+                <span>Neesingam Dhaan</span>
+                <button class="play-btn" onclick="playSong('songs/neesingam_than.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Neesingam Dhaan', 'artists/artists/images/neesingam_than.jpg', 'artists/artists/songs/neesingam_than.mp3')">Add to Playlist</button>
+            </li>
+            <li data-song="songs/enthran_enthera.mp3" data-name="Arima Arima" data-image="images/enthran_enthera.jpg">
+                <img src="images/enthran_enthera.jpg" alt="Arima Arima" class="song-img">
+                <span>Arima Arima</span>
+                <button class="play-btn" onclick="playSong('songs/enthran_enthera.mp3')">&#9654;</button>
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <button class="add-to-playlist-btn" onclick="addToPlaylist('Arima Arima', 'artists/artists/images/enthran_enthera.jpg', 'artists/artists/songs/enthran_enthera.mp3')">Add to Playlist</button>
+            </li>
+        </ul>
+
+        <!-- Audio player container -->
+        <div class="audio-container">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- JavaScript file reference -->
+</body>
+</html>

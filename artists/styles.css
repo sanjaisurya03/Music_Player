@@ -1,0 +1,141 @@
+body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #282828;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .artist-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .artist-card {
+            background-color: #1E1E1E;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .artist-card:hover {
+            background-color: #1DB954;
+            transform: scale(1.05);
+        }
+
+        .artist-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #282828;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Search Container */
+.search-container {
+    position: relative;
+    display: flex; /* Use flexbox for easy alignment */
+    align-items: center; /* Vertically align items */
+    width: 60%; /* Adjust width as needed */
+    margin: 20px auto; /* Center the search bar */
+    border: 1px solid #444; /* Border for the container */
+    border-radius: 50px; /* Rounded pill shape */
+    background-color: #1e1e1e;
+    padding: 10px 15px; /* Add padding for spacing */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.search-container:hover {
+    border-color: #1db954;
+    box-shadow: 0 2px 8px rgba(29, 185, 84, 0.6), inset 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Search Icon */
+.search-icon {
+    color: #1db954; /* Icon color */
+    font-size: 1.5rem; /* Icon size */
+    margin-right: 10px; /* Spacing between icon and input field */
+    pointer-events: none; /* Prevent interaction with the icon */
+    transition: color 0.3s ease;
+}
+
+.search-container:hover .search-icon {
+    color: #1a9d44; /* Change color on hover */
+}
+
+/* Search Bar */
+.search-bar {
+    flex-grow: 1; /* Make the input take the remaining space */
+    border: none; /* Remove input border */
+    outline: none; /* Remove focus outline */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* Text color */
+    font-size: 1rem;
+    padding: 0; /* Remove extra padding */
+}
+
+.search-bar::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        width: 80%;
+    }
+}
+
