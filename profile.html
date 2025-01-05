@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythmic World - Profile</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #1DB954;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #282828;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1DB954;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #1E1E1E;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-header h2 {
+            font-size: 2.5rem;
+            color: #1DB954;
+        }
+
+        .profile-picture {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #1DB954;
+        }
+
+        .profile-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .profile-details div {
+            width: 45%;
+        }
+
+        .profile-details label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-details p, .profile-details input {
+            padding: 0.5rem;
+            background-color: #282828;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            width: 100%;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            color: white; /* Ensure text is white */
+        }
+
+        .profile-details input {
+            display: none;
+        }
+
+        .profile-actions {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .profile-actions .cta-btn {
+            background-color: #1DB954;
+            color: black; /* Ensure text on buttons is black */
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-actions .cta-btn:hover {
+            background-color: #169644;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #282828;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Rhythmic World - Profile
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="artists.html">Artists</a>
+        <a href="albums.html">Albums</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="playlists.html">Playlists</a>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <h2>My Profile</h2>
+        </div>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-picture">
+            <img src="default-profile.jpg" id="profileImage" alt="">
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+
+        <!-- Profile Details -->
+        <div class="profile-details">
+            <div>
+                <label for="name">Name:</label>
+                <p id="nameDisplay"></p>
+                <input type="text" id="nameInput" value="your name">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <p id="emailDisplay"></p>
+                <input type="email" id="emailInput" value="eample@gmail.com">
+            </div>
+        </div>
+
+        <div class="profile-details">
+            <div>
+                <label for="location">Location:</label>
+                <p id="locationDisplay"></p>
+                <input type="text" id="locationInput" value="Address">
+            </div>
+            <div>
+                <label for="phone">Phone:</label>
+                <p id="phoneDisplay"></p>
+                <input type="text" id="phoneInput" value="+91 xxxxxxxxxxx">
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="profile-actions">
+            <a href="#" id="editProfileBtn" class="cta-btn">Edit Profile</a>
+            <a href="#" id="saveProfileBtn" class="cta-btn" style="display: none;">Save Profile</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script>
+        // Profile Interactivity
+        const editProfileBtn = document.getElementById('editProfileBtn');
+        const saveProfileBtn = document.getElementById('saveProfileBtn');
+
+        const nameDisplay = document.getElementById('nameDisplay');
+        const nameInput = document.getElementById('nameInput');
+
+        const emailDisplay = document.getElementById('emailDisplay');
+        const emailInput = document.getElementById('emailInput');
+
+        const locationDisplay = document.getElementById('locationDisplay');
+        const locationInput = document.getElementById('locationInput');
+
+        const phoneDisplay = document.getElementById('phoneDisplay');
+        const phoneInput = document.getElementById('phoneInput');
+
+        const imageUpload = document.getElementById('imageUpload');
+        const profileImage = document.getElementById('profileImage');
+
+        // Load data from localStorage on page load
+        window.onload = function () {
+            const storedName = localStorage.getItem('name');
+            const storedEmail = localStorage.getItem('email');
+            const storedLocation = localStorage.getItem('location');
+            const storedPhone = localStorage.getItem('phone');
+            const storedProfileImage = localStorage.getItem('profileImage');
+
+            if (storedName) nameDisplay.textContent = storedName;
+            if (storedEmail) emailDisplay.textContent = storedEmail;
+            if (storedLocation) locationDisplay.textContent = storedLocation;
+            if (storedPhone) phoneDisplay.textContent = storedPhone;
+            if (storedProfileImage) profileImage.src = storedProfileImage;
+        };
+
+        // Enable Edit Mode
+        function enableEditMode() {
+            nameDisplay.style.display = 'none';
+            nameInput.style.display = 'block';
+
+            emailDisplay.style.display = 'none';
+            emailInput.style.display = 'block';
+
+            locationDisplay.style.display = 'none';
+            locationInput.style.display = 'block';
+
+            phoneDisplay.style.display = 'none';
+            phoneInput.style.display = 'block';
+
+            editProfileBtn.style.display = 'none';
+            saveProfileBtn.style.display = 'inline-block';
+        }
+
+        // Save Profile Changes to localStorage
+        function saveProfile() {
+            // Save to localStorage
+            localStorage.setItem('name', nameInput.value);
+            localStorage.setItem('email', emailInput.value);
+            localStorage.setItem('location', locationInput.value);
+            localStorage.setItem('phone', phoneInput.value);
+
+            nameDisplay.textContent = nameInput.value;
+            emailDisplay.textContent = emailInput.value;
+            locationDisplay.textContent = locationInput.value;
+            phoneDisplay.textContent = phoneInput.value;
+
+            nameDisplay.style.display = 'block';
+            nameInput.style.display = 'none';
+
+            emailDisplay.style.display = 'block';
+            emailInput.style.display = 'none';
+
+            locationDisplay.style.display = 'block';
+            locationInput.style.display = 'none';
+
+            phoneDisplay.style.display = 'block';
+            phoneInput.style.display = 'none';
+
+            editProfileBtn.style.display = 'inline-block';
+            saveProfileBtn.style.display = 'none';
+        }
+
+        // Update Profile Picture
+        imageUpload.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    profileImage.src = event.target.result;
+                    localStorage.setItem('profileImage', event.target.result); // Save image to localStorage
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Add Event Listeners
+        editProfileBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            enableEditMode();
+        });
+
+        saveProfileBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            saveProfile();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Language - Rhythmic World</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #282828;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .language-selector {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .language-frame {
+            background-color: #1E1E1E;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .language-frame:hover {
+            background-color: #1DB954;
+            transform: scale(1.05);
+        }
+
+        .language-frame.active {
+            background-color: #1DB954;
+        }
+
+        footer {
+            background-color: #282828;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Rhythmic World - Select Language for Artist
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="albums.html">Albums</a>
+        <a href="playlists.html">Playlists</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <div class="language-frame" onclick="window.location.href='artists/artists_english.html'">English</div>
+        <div class="language-frame" onclick="window.location.href='artists/artists_tamil.html'">Tamil</div>
+        <div class="language-frame" onclick="window.location.href='artists/artists_hindi.html'">Hindi</div>
+        <div class="language-frame" onclick="window.location.href='artists/artists_malayalam.html'">Malayalam</div>
+        <div class="language-frame" onclick="window.location.href='artists/artists_telugu.html'">Telugu</div>
+        <div class="language-frame" onclick="window.location.href='artists/artists_kannada.html'">Kannada</div> <!-- Added Kannada -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Playlist - Rhythmic World</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #282828;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1DB954;
+        }
+
+        section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #1DB954;
+            margin-bottom: 2rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Set two columns */
+            gap: 2rem; /* Space between columns */
+            justify-content: center;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            padding: 1rem;
+            background-color: #1E1E1E;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #333;
+        }
+
+        .song-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .play-btn, .remove-btn {
+            background-color: #1DB954;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .play-btn:hover {
+            background-color: #159C44;
+        }
+
+        .remove-btn {
+            background-color: #e0245e;
+        }
+
+        .remove-btn:hover {
+            background-color: #b01d4c;
+        }
+
+        footer {
+            background-color: #282828;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Playlist</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="artists.html">Artists</a>
+        <a href="albums.html">Albums</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <section>
+        <h2>Saved Songs</h2>
+        <ul id="playlist">
+            <!-- Songs will be dynamically added here -->
+        </ul>
+
+        <!-- Audio player for playing songs -->
+        <div class="audio-container" style="text-align: center; margin-top: 20px;">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+    <script>
+        // Initialize the playlist from localStorage or an empty array if not found
+        const playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+        const playlistContainer = document.getElementById('playlist');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioSource = document.getElementById('audioSource');
+        let currentSongIndex = 0; // Track the index of the currently playing song
+
+        // Function to render playlist items
+        function renderPlaylist() {
+            playlistContainer.innerHTML = ''; // Clear the container
+            playlist.forEach((song, index) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div style="display: flex; align-items: center;">
+                        <img src="${song.image}" alt="${song.name}" class="song-img">
+                        <span>${song.name}</span>
+                    </div>
+                    <div>
+                        <button class="play-btn" onclick="playSongFromPlaylist(${index})">Play</button>
+                        <button class="remove-btn" onclick="removeSong(${index}, event)">Remove</button>
+                    </div>
+                `;
+                playlistContainer.appendChild(listItem);
+            });
+        }
+
+        // Function to play a song from the playlist
+        function playSongFromPlaylist(index) {
+            currentSongIndex = index; // Set the current song index
+            const song = playlist[currentSongIndex];
+            audioSource.src = song.url; // Set the audio source to the song URL
+            audioPlayer.load(); // Load the new song
+            audioPlayer.play(); // Play the song
+
+            // Listen for when the current song ends
+            audioPlayer.onended = function() {
+                playNextSong(); // Play the next song when the current one ends
+            };
+        }
+
+        // Function to play the next song in the playlist
+        function playNextSong() {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song if at the end
+            playSongFromPlaylist(currentSongIndex); // Play the next song
+        }
+
+        // Function to remove a song from the playlist
+        function removeSong(index, event) {
+            event.stopPropagation(); // Prevent event bubbling
+            playlist.splice(index, 1); // Remove the song from the array
+            localStorage.setItem('playlist', JSON.stringify(playlist)); // Update local storage
+            renderPlaylist(); // Re-render the playlist
+        }
+
+        // Function to add a song to the playlist
+        function addToPlaylist(name, image, url) {
+            // Check if the song is already in the playlist
+            const songExists = playlist.some(song => song.name === name);
+            if (!songExists) {
+                const newSong = { name, image, url };
+                playlist.push(newSong); // Add the song to the playlist array
+                localStorage.setItem('playlist', JSON.stringify(playlist)); // Save the playlist to localStorage
+                renderPlaylist(); // Re-render the playlist
+            }
+        }
+
+        // Render the playlist on page load
+        renderPlaylist();
+    </script>
+</body>
+</html>

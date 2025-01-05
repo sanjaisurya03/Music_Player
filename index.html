@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythmic World - Explore Music and Artists</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #1DB954;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #282828;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1DB954;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('https://source.unsplash.com/1600x600/?concert') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 10px #000;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);  /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            padding: 0 1rem;
+            line-height: 1.2;
+            z-index: 2;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 3rem 2rem;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1DB954;
+            margin-bottom: 2rem;
+        }
+
+        /* Card Grid */
+        .card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card-item {
+            background-color: #1E1E1E;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-item h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .card-item p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #282828;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Rhythmic World
+    </header>
+
+    <nav>
+        <a href="artists.html">Artists</a>
+        <a href="albums.html">Albums</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="playlists.html">Playlists</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Discover Music That Moves You</h1>
+    </div>
+
+    <section id="artists">
+        <h2>Top Artists</h2>
+        <div class="card">
+            <div class="card-item" onclick="window.location.href='artists/artists/taylorswift.html'">
+                <img src="images/taylorswift.jpg" alt="Taylor Swift">
+                <h3>Taylor Swift</h3>
+                <p>Genre: Pop</p>
+            </div>
+            <div class="card-item" onclick="window.location.href='artists/artists/davegrohl.html'">
+                <img src="images/DaveGrohl.jpg" alt="Dave Grohl">
+                <h3>Dave Grohl</h3>
+                <p>Genre: Rock</p>
+            </div>
+            <div class="card-item" onclick="window.location.href='artists/artists/norahjones.html'">
+                <img src="images/norahjones.jpg" alt="Norah Jones">
+                <h3>Norah Jones</h3>
+                <p>Genre: Jazz</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="albums">
+        <h2>New Releases</h2>
+        <div class="card">
+            <div class="card-item" onclick="window.location.href='albums/albums/beyoncécowboycarter.html'">
+                <img src="images/beyoncécowboycarter.jpg" alt="Beyoncé - Cowboy Carter">
+                <h3>Beyoncé - Cowboy Carter</h3>
+                <p>Released: 2024</p>
+            </div>
+            <div class="card-item" onclick="window.location.href='albums/albums/midnight.html'">
+                <img src="images/midnight.jpg" alt="Midnights">
+                <h3>Midnights</h3>
+                <p>Released: 2023</p>
+            </div>
+            <div class="card-item" onclick="window.location.href='albums/albums/harrystyles.html'">
+                <img src="images/harrystyles.jpg" alt="Harry's House">
+                <h3>Harry's House</h3>
+                <p>Released: 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2024 Rhythmic World. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@rhythmicworld.com">info@rhythmicworld.com</a></p>
+    </footer>
+
+</body>
+</html>
